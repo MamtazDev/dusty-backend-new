@@ -186,7 +186,7 @@ const sendEmail = async (req, res) => {
                 margin-bottom: 15px;
                 font-size: 14px;
                 line-height: 22px;
-                font-weight: 400;
+                font-weight: 600;
                 color: #363636;
                 font-family: 'Inter', sans-serif;
                 text-align: center;
@@ -270,14 +270,14 @@ const sendEmail = async (req, res) => {
               style="
                 margin: 0;
                 padding: 0;
-                font-size: 21px;
+                font-size: 14px;
                 font-weight: 700;
                 text-decoration: none;
               ">
               <a
-                href="mailto: doshcapital.com.au"
+                href="#"
                 style="text-decoration: none; color: #464646">
-                DoshCapital.com.au
+                Dosh Capital Investment
               </a>
             </p>
           </td>
