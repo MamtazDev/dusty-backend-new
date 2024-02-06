@@ -2,7 +2,6 @@ const express = require("express");
 const cors = require("cors");
 const connectDB = require("./config/db");
 const PORT = process.env.PORT || 8000;
-
 const userRoutes = require("./routes/user.routes");
 const poolRoutes = require("./routes/pool.routes");
 const depositeRoutes = require("./routes/deposite.routes");
