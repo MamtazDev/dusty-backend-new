@@ -37,7 +37,9 @@ const sendEmail = async (req, res) => {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="format-detection" content="telephone=no" />
-    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;" />
+    <meta
+      name="viewport"
+      content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=no;" />
     <meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -54,13 +56,15 @@ const sendEmail = async (req, res) => {
       outline: 0;
       font-family: 'Helvetica Neue', sans-serif;
     ">
-    <div style="width: 420px; padding: 20px; border: 1px solid gray; border-radius: 15px; margin: 0 auto">
-      <table
-        border="0"
-        cellpadding="0"
-        cellspacing="0"
-        width="100%"
-        >
+    <div
+      style="
+        width: 470px;
+        padding: 20px;
+        border: 1px solid gray;
+        border-radius: 15px;
+        margin: 0 auto;
+      ">
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
         <tr>
           <td colspan="12" width="100%" vertical-align="middle">
             <tr>
@@ -69,10 +73,22 @@ const sendEmail = async (req, res) => {
                 colspan="10"
                 width="100%"
                 style="border-bottom: 1px solid #ceab8e">
-                <p style="font-weight: 300; margin: 0; padding: 0">
+                <p
+                  style="
+                    font-weight: 300;
+                    margin: 0;
+                    padding: 0;
+                    font-size: 12px;
+                  ">
                   Enjoy Automated Trading
                 </p>
-                <p style="font-weight: 300; margin: 0; padding: 0">
+                <p
+                  style="
+                    font-weight: 300;
+                    margin: 0;
+                    padding: 0;
+                    font-size: 12px;
+                  ">
                   Like Never Before
                 </p>
               </td>
@@ -103,6 +119,7 @@ const sendEmail = async (req, res) => {
                         padding: 0;
                         display: flex;
                         align-items: center;
+                        line-height: 10px;
                       ">
                       <a
                         href="https://doshcapital.com.au/"
@@ -112,9 +129,9 @@ const sendEmail = async (req, res) => {
                           gap: 10px;
                           text-decoration: none;
                           justify-content: start;
-                          font-size: 18px;
+                          font-size: 22px;
                           font-weight: 700;
-                          color: #696969;
+                          color: #aaaaaa;
                           font-family: 'Inter', sans-serif;
                         ">
                         <span> DoshCapital.com.au </span>
@@ -136,7 +153,7 @@ const sendEmail = async (req, res) => {
                           align-items: center;
                           gap: 10px;
                           text-decoration: none;
-                          justify-content: start;
+                          justify-content: end;
                           font-size: 12px;
                           font-weight: 400;
                           color: #075759;
@@ -146,7 +163,7 @@ const sendEmail = async (req, res) => {
                           style="
                             color: #000;
                             font-family: 'Inter', sans-serif;
-                            font-size: 16px;
+                            font-size: 12px;
                           ">
                           Invest Smart
                         </span>
@@ -170,6 +187,7 @@ const sendEmail = async (req, res) => {
                 line-height: 20px;
                 padding: 0;
                 margin: 10px 0;
+                margin-top: 40px;
                 text-align: center;
                 font-weight: 700;
               ">
@@ -183,7 +201,7 @@ const sendEmail = async (req, res) => {
               style="
                 padding: 0;
                 margin: 0;
-                margin-bottom: 15px;
+                margin-bottom: 45px;
                 font-size: 14px;
                 line-height: 22px;
                 font-weight: 600;
@@ -201,16 +219,17 @@ const sendEmail = async (req, res) => {
             <a
               style="
                 display: inline-block;
-                font-size: 14px;
                 text-decoration: none;
                 font-weight: 500;
                 color: white;
                 background-color: #a13bb6;
-                padding: 8px 40px;
+                padding: 8px 19px;
                 border-radius: 30px;
                 cursor: pointer;
                 border: none;
-                width: 180px;
+                width: 112px;
+                margin-bottom: 40px;
+                font-size: 8px;
               "
               href="https://doshcapital.com.au/?email=${req.body.email}">
               CONFIRM EMAIL
@@ -232,8 +251,12 @@ const sendEmail = async (req, res) => {
                 text-align: center;
               ">
               Click on the button or copy the link on your browser
-              <a href="https://doshcapital.com.au/?email=${req.body.email}" style="color: #ceab8e">
-              https://doshcapital.com.au/?email=${req.body.email}</a>
+              <a
+                href="https://doshcapital.com.au/?email=${req.body.email}"
+                style="color: #ceab8e">
+                https://doshcapital.com.au/?email=${req.body.email}</a
+              >
+              <br>
               to confirm your email
             </p>
           </td>
@@ -255,16 +278,24 @@ const sendEmail = async (req, res) => {
                 font-family: 'Inter', sans-serif;
                 text-align: center;
               ">
-              Thank you and welcome
+              Thank you and welcome to
               <span style="font-weight: bold">DoshCapital</span>
             </p>
           </td>
         </tr>
         <tr>
-          <td colspan="0" style="padding-bottom: 10px; padding-top: 20px">
+          <td
+            colspan="0"
+            style="
+              padding-bottom: 10px;
+              padding-top: 20px;
+              padding-right: 10px;
+            ">
             <img src="https://i.postimg.cc/5NZP7chS/image-2.png" alt="" />
           </td>
-          <td colspan="6" style="padding-bottom: 10px; padding-top: 20px">
+          <td
+            colspan="6"
+            style="padding-bottom: 10px; padding-top: 20px; margin-left: 20px">
             <p style="margin: 0; padding: 0">Best wishes from Dusty</p>
             <p
               style="
@@ -273,10 +304,16 @@ const sendEmail = async (req, res) => {
                 font-size: 14px;
                 font-weight: 700;
                 text-decoration: none;
+
               ">
               <a
                 href="#"
-                style="text-decoration: none; color: #464646">
+                style="
+                  text-decoration: none;
+                  color: #464646;
+                  font-size: 17px;
+                  white-space: nowrap;
+                ">
                 Dosh Capital Investment
               </a>
             </p>
@@ -288,8 +325,9 @@ const sendEmail = async (req, res) => {
             width="100%"
             style="
               text-align: center;
-              padding-top: 20px 0;
+              padding-top: 30px;
               padding-bottom: 15px;
+              font-size: 12px;
             ">
             Connect with us
           </td>
@@ -297,27 +335,27 @@ const sendEmail = async (req, res) => {
         <tr>
           <td colspan="12" width="100%">
             <p style="text-align: center; margin: 0; padding: 0">
-              <a href="#" style="width: 30px">
+              <a href="#" style="width: 25px; margin-right: 10px;">
                 <img
-                  style="width: 30px"
+                  style="width: 25px"
                   src="https://i.postimg.cc/sDYZNcJq/face.png"
                   alt="" />
               </a>
-              <a href="#" style="width: 30px">
+              <a href="#" style="width: 25px; margin-right: 10px;">
                 <img
-                  style="width: 30px"
+                  style="width: 25px"
                   src="https://i.postimg.cc/qvQ6kvSG/linkedin.png"
                   alt="" />
               </a>
-              <a href="#" style="width: 30px">
+              <a href="#" style="width: 25px; margin-right: 10px;">
                 <img
-                  style="width: 30px"
+                  style="width: 25px"
                   src="https://i.postimg.cc/BnJ19KY6/twitter.png"
                   alt="" />
               </a>
-              <a href="#" style="width: 30px">
+              <a href="#" style="width: 25px; margin-right: 10px;">
                 <img
-                  style="width: 30px"
+                  style="width: 25px"
                   src="https://i.postimg.cc/PJsvSSN3/instagram.png"
                   alt="" />
               </a>
@@ -329,22 +367,36 @@ const sendEmail = async (req, res) => {
             colspan="12"
             width="100%"
             style="padding: 20px; text-align: center">
-            <a style="margin-right: 10px; font-weight: bold"
+            <a style="    margin-right: 10px;
+    font-weight: bold;
+    font-size: 12px;
+    color: gray;
+"
               >DoshCapital.com.au</a
             >
-            <a style="margin-right: 10px">Terms and conditon</a>
-            <a style="margin-right: 10px">Unsubscibe</a>
+            <a style="    margin-right: 10px;
+    font-weight: bold;
+    font-size: 12px;
+    color: gray;
+">Terms and conditon</a>
+            <a style="    margin-right: 10px;
+    font-weight: bold;
+    font-size: 12px;
+    color: gray;
+">Unsubscibe</a>
           </td>
         </tr>
         <tr>
           <td colspan="12" width="100%">
             <p
               style="
-                border: 1px solid gray;
-                border-radius: 8px;
-                padding: 20px;
-                color: #696969;
-                line-height: 30px;
+                    border: 1px solid #dedede;
+    border-radius: 8px;
+    padding: 10px;
+    color: #696969;
+    line-height: 15px;
+    font-size: 10px;
+    color: gray;
               ">
               CFDs are complex leveraged instruments and come with a high risk
               of losing money. These products are not suitable for everyone and
@@ -367,11 +419,11 @@ const sendEmail = async (req, res) => {
           <td
             colspan="12"
             width="100%"
-            style="text-align: center; text-decoration: none">
+            style="text-align: center; text-decoration: none; font-size: 8px; color: #dedede;">
             © 2022
             <a
               href="mailto: doshcapital.com.au"
-              style="text-decoration: none; color: #000"
+              style="text-decoration: none; font-size: 8px; color: #dedede;"
               >DoshCapital.com.au</a
             >
             | 7.2302.01
@@ -381,6 +433,7 @@ const sendEmail = async (req, res) => {
     </div>
   </body>
 </html>
+
 `,
   };
   transporter.sendMail(mailOptions, (error, info) => {
