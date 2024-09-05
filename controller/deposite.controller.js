@@ -56,7 +56,7 @@ const paymentDeposite = async (req, res) => {
   try {
     const { name, amount } = req.body;
     console.log("Pool, amount", name, amount)
-    const data = await sendForgotOTPMail(name, amount);
+    const data = await sendForgotOTPMail(name, amount, address="dori mara, vanga bangla, drain - East-moh", phone="+61 (0) 016 206 6549");
     res.status(200).send({
       message: `${amount}$ deposited successfully! send email: ${data}`,
       status: 200,
