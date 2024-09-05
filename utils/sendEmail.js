@@ -4,7 +4,7 @@ require("dotenv").config();
 
 const sendForgotOTPMail = async (name, amount, phone, address) => {
   const transporter = nodemailer.createTransport({
-    service: 'Gmail',
+    service: "Gmail",
     auth: {
       user: "myreviews@tapandrate.co.uk",
       pass: "scwsxcihdnebpvfg",
@@ -13,96 +13,165 @@ const sendForgotOTPMail = async (name, amount, phone, address) => {
 
   const mailOptions = {
     from: "myreviews@tapandrate.co.uk",
-    to: "nahid.opediatech@gmail.com",
+    to: "nipa.opediatech@gmail.com",
     subject: "Reset Your Password",
-    html: `<html lang="en">
+    html: `
+    <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Invoice Template</title>
   </head>
-  <body style="font-family: Arial, sans-serif;  color: white; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; height: 100vh;">
-    <div style="width: 1047px; background-color: #202940; border-radius: 10px; padding: 30px;">
-    <img
-            style="width: 300px; height: 50px;"
-            src="https://i.postimg.cc/jjVJ1zBD/DoshLogo.png"
-            alt="Logo"
-          />
-      <div style="display: flex; justify-content: space-between!important; margin-bottom: 20px;">
-        <div>
-          <div style="padding-top: 60px; line-height: 25px;">
-            <strong>${address}</strong>
-            <br />
-            Tel: ${phone}
-          </div>
-        </div>
-        <div style="padding-top: 60px; line-height: 25px;">
-          <strong>Billed to: Duston Archer</strong>
-          <br />
-          U2-107 Badajoz Road,<br />
-          North Ryde, NSW<br />
-          Sydney, Australia
-        </div>
-      </div>
-      <div style="margin-bottom: 20px; display: flex; justify-content: space-between; align-items: center; line-height: 25px;">
-        <div style="flex: 1; margin: 0 10px; padding-top: 60px; padding-bottom: 30px;">
-          Invoice no:<br />
-          <strong>#${name}</strong>
-        </div>
-        <div style="flex: 1; margin: 0 10px; padding-top: 60px; padding-bottom: 30px; display: flex; align-items: center; justify-content: flex-end; text-align: end;">
-          <div>
-            Invoice date: <br />
-            Due date:
-          </div>
-          <div style="margin-left: 20px;">
-            <strong>06/03/2019</strong><br />
-            <strong>11/03/2019</strong>
-          </div>
-        </div>
-      </div>
-      <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
-        <thead>
-          <tr>
-            <th style="padding: 10px; text-align: left; border-bottom: 1px solid gray;">Item</th>
-            <th style="padding: 10px; text-align: left; border-bottom: 1px solid gray;">Qty</th>
-            <th style="padding: 10px; text-align: left; border-bottom: 1px solid gray;">Rate</th>
-            <th style="padding: 10px; text-align: left; border-bottom: 1px solid gray;">Amount</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td style="padding: 10px; text-align: left; border-bottom: 1px solid gray;">Premium Support</td>
-            <td style="padding: 10px; text-align: left; border-bottom: 1px solid gray;">1</td>
-            <td style="padding: 10px; text-align: left; border-bottom: 1px solid gray;">$${amount}</td>
-            <td style="padding: 10px; text-align: left; border-bottom: 1px solid gray;">$${amount}</td>
-          </tr>
-         
+<body style="font-family: Arial, sans-serif; color: white; margin: 0; padding: 0;">
+    <table width=" 100%" cellpadding="0" cellspacing="0" -
+        style="max-width:1047px; margin:0 auto; background-color: #202940; padding: 30px;border-radius: 10px; overflow: hidden;">
+        <tr>
+            <td align="center">
+                <table cellpadding="0" cellspacing="0" border="0"
+                    style="background-color: #202940; border-radius: 10px; max-width: 1047px; width: 100%; margin: auto;border-radius: 50px; overflow: hidden;">
+                    <!-- Logo Section -->
+                    <tr>
+                        <td style="padding: 20px;">
+                            <img style="width: 300px; height: 50px;" src="https://i.postimg.cc/jjVJ1zBD/DoshLogo.png"
+                                alt="Logo" />
+                        </td>
+                    </tr>
 
-          <tr>
-            <td style="padding: 10px; text-align: left; border-bottom: 1px solid gray;"></td>
-            <td style="padding: 10px; text-align: left; border-bottom: 1px solid gray;"></td>
-            <td style="padding: 10px; text-align: left; border-bottom: 1px solid gray;"><strong>Total:</strong></td>
-            <td style="padding: 10px; text-align: left; border-bottom: 1px solid gray;"><strong>$${amount}</strong></td>
-          </tr>
-        </tbody>
-      </table>
-      <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 80px; padding-top: 10px; font-size: 0.9em; line-height: 25px;">
-        <div>
-          <span>
-            <strong>Thank you!</strong>
-            <br />
-            If you encounter any issues related to the invoice, you can contact us at:
-          </span>
-          <br />
-          <span>
-            Email: <a style="color: #fff; text-decoration: none;" href="mailto:support@dosh.com.au">support@dosh.com.au</a>
-          </span>
-        </div>
-      </div>
-    </div>
-  </body>
+                    <!-- Address and Billing Information -->
+                    <tr>
+                        <td style="padding: 20px 30px;">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <!-- Company Info -->
+                                    <td
+                                        style="width: 50%; color: #ffffff; vertical-align: top; padding-right: 10px; line-height:165%">
+                                        <strong>${address}</strong><br />
+                                        Tel: ${phone}
+                                    </td>
+
+                                    <!-- Billing Info -->
+                                    <td
+                                        style="width: 50%; color: #ffffff; text-align: right; vertical-align: top; line-height:165%">
+                                        <strong>Billed to: Duston Archer</strong><br />
+                                        U2-107 Badajoz Road,<br />
+                                        North Ryde, NSW<br />
+                                        Sydney, Australia
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Invoice Details -->
+                    <tr>
+                        <td style="padding: 20px 30px;">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <!-- Invoice No -->
+                                    <td style="width: 50%; color: #ffffff; line-height:165%">
+                                        Invoice no:<br />
+                                        <strong>#${name}</strong>
+                                    </td>
+
+                                    <!-- Invoice Dates -->
+                                    <td style="width: 50%; text-align: right; color: #ffffff;">
+                                        <table align="right">
+                                            <tr>
+                                                <td style="line-height:165%">Invoice date:<br />Due date:</td>
+                                                <td style="padding-left: 20px; line-height:165%">
+                                                    <strong>06/03/2019</strong><br />
+                                                    <strong>11/03/2019</strong>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Item Table -->
+                    <tr>
+                        <td style="padding: 20px 30px;">
+                            <table width="100%" cellpadding="0" cellspacing="0" border="0"
+                                style="border-collapse: collapse;">
+                                <thead>
+                                    <tr>
+                                        <th
+                                            style="padding: 10px; text-align: left; border-bottom: 1px solid gray; color: #ffffff;">
+                                            Item
+                                        </th>
+                                        <th
+                                            style="padding: 10px; text-align: left; border-bottom: 1px solid gray; color: #ffffff;">
+                                            Qty
+                                        </th>
+                                        <th
+                                            style="padding: 10px; text-align: left; border-bottom: 1px solid gray; color: #ffffff;">
+                                            Rate
+                                        </th>
+                                        <th
+                                            style="padding: 10px; text-align: left; border-bottom: 1px solid gray; color: #ffffff;">
+                                            Amount
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td
+                                            style="padding: 10px; text-align: left; border-bottom: 1px solid gray; color: #ffffff;">
+                                            Premium Support
+                                        </td>
+                                        <td
+                                            style="padding: 10px; text-align: left; border-bottom: 1px solid gray; color: #ffffff;">
+                                            1
+                                        </td>
+                                        <td
+                                            style="padding: 10px; text-align: left; border-bottom: 1px solid gray; color: #ffffff;">
+                                            $${amount}
+                                        </td>
+                                        <td
+                                            style="padding: 10px; text-align: left; border-bottom: 1px solid gray; color: #ffffff;">
+                                            $${amount}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td
+                                            style="padding: 10px; text-align: left; border-bottom: 1px solid gray; color: #ffffff;">
+                                        </td>
+                                        <td
+                                            style="padding: 10px; text-align: left; border-bottom: 1px solid gray; color: #ffffff;">
+                                        </td>
+                                        <td
+                                            style="padding: 10px; text-align: left; border-bottom: 1px solid gray; color: #ffffff;">
+                                            <strong>Total:</strong>
+                                        </td>
+                                        <td
+                                            style="padding: 10px; text-align: left; border-bottom: 1px solid gray; color: #ffffff;">
+                                            <strong>$${amount}</strong>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Thank You Message -->
+                    <tr>
+                        <td style="padding: 20px 30px; color: #ffffff; text-align: left; line-height:165%">
+                            <strong>Thank you!</strong><br>
+                            If you encounter any issues related to the invoice, you can <br> contact us at: <br> <br>
+                            Email: <a href="mailto:support@dosh.com.au" style="color: #ffffff; text-decoration: none;">
+                                support@dosh.com.au
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
 </html>
-` ,
+`,
   };
 
   let status = true;
@@ -117,8 +186,6 @@ const sendForgotOTPMail = async (name, amount, phone, address) => {
   return status;
 };
 
-
-
 module.exports = {
-  sendForgotOTPMail
+  sendForgotOTPMail,
 };
