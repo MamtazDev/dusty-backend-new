@@ -23,7 +23,7 @@ app.use("/api/deposite", depositeRoutes);
 app.post("/api/send-email", sendEmail);
 
 app.get("/", (req, res) => {
-  res.send("Server is running");
+  res.send("Server is running...");
 });
 
 app.listen(PORT, () => {
