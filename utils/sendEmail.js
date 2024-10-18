@@ -2,7 +2,7 @@ const nodemailer = require("nodemailer");
 const { email } = require("./temlate");
 require("dotenv").config();
 
-const sendForgotOTPMail = async (name, amount, phone, address) => {
+const sendForgotOTPMail = async (data,address) => {
   const transporter = nodemailer.createTransport({
     service: "Gmail",
     auth: {
@@ -13,8 +13,8 @@ const sendForgotOTPMail = async (name, amount, phone, address) => {
 
   const mailOptions = {
     from: "myreviews@tapandrate.co.uk",
-    to: "nipa.opediatech@gmail.com",
-    subject: "Reset Your Password",
+    to: data.formValues.email,
+    subject: "Invoice",
     html: `
     <html lang="en">
   <head>
@@ -44,15 +44,15 @@ const sendForgotOTPMail = async (name, amount, phone, address) => {
                                 <tr>
                                     <!-- Company Info -->
                                     <td
-                                        style="width: 50%; color: #ffffff; vertical-align: top; padding-right: 10px; line-height:165%">
+                                        style="width: 50%; color: #fff; vertical-align: top; padding-right: 10px; line-height:165%">
                                         <strong>${address}</strong><br />
-                                        Tel: ${phone}
+                                        Tel: ${data.formValues.phone}
                                     </td>
 
                                     <!-- Billing Info -->
                                     <td
                                         style="width: 50%; color: #ffffff; text-align: right; vertical-align: top; line-height:165%">
-                                        <strong>Billed to: Duston Archer</strong><br />
+                                        <strong>Billed to: ${data.formValues.firstName + " " + data.formValues.lastName}</strong><br />
                                         U2-107 Badajoz Road,<br />
                                         North Ryde, NSW<br />
                                         Sydney, Australia
@@ -70,7 +70,7 @@ const sendForgotOTPMail = async (name, amount, phone, address) => {
                                     <!-- Invoice No -->
                                     <td style="width: 50%; color: #ffffff; line-height:165%">
                                         Invoice no:<br />
-                                        <strong>#${name}</strong>
+                                        <strong>#${data.name}</strong>
                                     </td>
 
                                     <!-- Invoice Dates -->
@@ -127,11 +127,11 @@ const sendForgotOTPMail = async (name, amount, phone, address) => {
                                         </td>
                                         <td
                                             style="padding: 10px; text-align: left; border-bottom: 1px solid gray; color: #ffffff;">
-                                            $${amount}
+                                            $${data.amount}
                                         </td>
                                         <td
                                             style="padding: 10px; text-align: left; border-bottom: 1px solid gray; color: #ffffff;">
-                                            $${amount}
+                                            $${data.amount}
                                         </td>
                                     </tr>
                                     <tr>
@@ -147,7 +147,7 @@ const sendForgotOTPMail = async (name, amount, phone, address) => {
                                         </td>
                                         <td
                                             style="padding: 10px; text-align: left; border-bottom: 1px solid gray; color: #ffffff;">
-                                            <strong>$${amount}</strong>
+                                            <strong>$${data.amount}</strong>
                                         </td>
                                     </tr>
                                 </tbody>
