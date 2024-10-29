@@ -2,17 +2,17 @@ const nodemailer = require("nodemailer");
 const { email } = require("./temlate");
 require("dotenv").config();
 
-const sendForgotOTPMail = async (data,address) => {
+const sendForgotOTPMail = async (data, address) => {
   const transporter = nodemailer.createTransport({
     service: "Gmail",
     auth: {
-      user: "myreviews@tapandrate.co.uk",
-      pass: "scwsxcihdnebpvfg",
+      user: process.env.GMAIL_USER,
+      pass: process.env.GMAIL_PASS,
     },
   });
 
   const mailOptions = {
-    from: "myreviews@tapandrate.co.uk",
+    from: process.env.GMAIL_USER,
     to: data.formValues.email,
     subject: "Invoice",
     html: `
@@ -52,7 +52,11 @@ const sendForgotOTPMail = async (data,address) => {
                                     <!-- Billing Info -->
                                     <td
                                         style="width: 50%; color: #ffffff; text-align: right; vertical-align: top; line-height:165%">
-                                        <strong>Billed to: ${data.formValues.firstName + " " + data.formValues.lastName}</strong><br />
+                                        <strong>Billed to: ${
+                                          data.formValues.firstName +
+                                          " " +
+                                          data.formValues.lastName
+                                        }</strong><br />
                                         U2-107 Badajoz Road,<br />
                                         North Ryde, NSW<br />
                                         Sydney, Australia
